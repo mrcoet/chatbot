@@ -1,0 +1,157 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "bef36ae1-3ca8-49c4-a156-f9e70672cc1b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>QuestionID</th>\n",
+       "      <th>Question</th>\n",
+       "      <th>DocumentID</th>\n",
+       "      <th>DocumentTitle</th>\n",
+       "      <th>SentenceID</th>\n",
+       "      <th>Sentence</th>\n",
+       "      <th>AnswerPhrase1</th>\n",
+       "      <th>AnswerPhrase2</th>\n",
+       "      <th>AnswerPhrase3</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>Q0</td>\n",
+       "      <td>HOW AFRICAN AMERICANS WERE IMMIGRATED TO THE US</td>\n",
+       "      <td>D0</td>\n",
+       "      <td>African immigration to the United States</td>\n",
+       "      <td>D0-5</td>\n",
+       "      <td>As such, African immigrants are to be distingu...</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>involuntarily brought to the United States by ...</td>\n",
+       "      <td>Atlantic slave trade</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>Q1</td>\n",
+       "      <td>how are glacier caves formed?</td>\n",
+       "      <td>D1</td>\n",
+       "      <td>Glacier cave</td>\n",
+       "      <td>D1-3</td>\n",
+       "      <td>A glacier cave is a cave formed within the ice...</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>within the ice of a glacier</td>\n",
+       "      <td>formed within the ice of a glacier</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "  QuestionID                                         Question DocumentID  \\\n",
+       "0         Q0  HOW AFRICAN AMERICANS WERE IMMIGRATED TO THE US         D0   \n",
+       "1         Q1                    how are glacier caves formed?         D1   \n",
+       "\n",
+       "                              DocumentTitle SentenceID  \\\n",
+       "0  African immigration to the United States       D0-5   \n",
+       "1                              Glacier cave       D1-3   \n",
+       "\n",
+       "                                            Sentence AnswerPhrase1  \\\n",
+       "0  As such, African immigrants are to be distingu...           NaN   \n",
+       "1  A glacier cave is a cave formed within the ice...           NaN   \n",
+       "\n",
+       "                                       AnswerPhrase2  \\\n",
+       "0  involuntarily brought to the United States by ...   \n",
+       "1                        within the ice of a glacier   \n",
+       "\n",
+       "                        AnswerPhrase3  \n",
+       "0                Atlantic slave trade  \n",
+       "1  formed within the ice of a glacier  "
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import pandas as pd\n",
+    "df = pd.read_csv('WikiQASent.pos.ans.tsv', sep='\\t')\n",
+    "df.head(2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "b80ec732-fa2a-4dd2-b5eb-d958eea99755",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "QuestionID                                                   Q1796\n",
+       "Question                                  when did world war 2 end\n",
+       "DocumentID                                                   D1698\n",
+       "DocumentTitle                                         World War II\n",
+       "SentenceID                                                 D1698-0\n",
+       "Sentence         World War II (WWII or WW2), also known as the ...\n",
+       "AnswerPhrase1                                                 1945\n",
+       "AnswerPhrase2                                                 1945\n",
+       "AnswerPhrase3                                                  NaN\n",
+       "Name: 882, dtype: object"
+      ]
+     },
+     "execution_count": 29,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "filt = df['QuestionID'] == 'Q1796'\n",
+    "res = df.loc[filt]\n",
+    "res.iloc[0]\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "ChatBot",
+   "language": "python",
+   "name": "chatbot"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

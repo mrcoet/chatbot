@@ -1,0 +1,47 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "81461439-b364-450b-84e8-cf4f61a1a0a8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import nltk\n",
+    "nltk.download('punkt')\n",
+    "nltk.download('wordnet')\n",
+    "from nltk.stem import WordNetLemmatizer\n",
+    "lemmatizer = WordNetLemmatizer()\n",
+    "import json\n",
+    "import pickle\n",
+    "\n",
+    "import numpy as np\n",
+    "from keras.models import Sequential\n",
+    "from keras.layers import Dense, Activation, Dropout\n",
+    "from keras.optimizers import SGD\n",
+    "import random"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "ChatBot",
+   "language": "python",
+   "name": "chatbot"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
