@@ -4,7 +4,7 @@
 
 ---
 
-#### File `train.py` and `model.py` used in training the Neural network
+#### File `train.py` and `model.py` are used in training the Neural network
 
 ---
 
@@ -12,4 +12,4 @@
 
 ---
 
-#### The dataset in the file `WikiQASent.pos.ans`
+#### The dataset is in the file `WikiQASent.pos.ans`
